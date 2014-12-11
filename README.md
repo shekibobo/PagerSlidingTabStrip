@@ -1,7 +1,7 @@
 # Android PagerSlidingTabStrip
 
-Interactive paging indicator widget, compatible with the `ViewPager` from the 
-Android Support Library. 
+Interactive paging indicator widget, compatible with the `ViewPager` from the
+Android Support Library.
 
 Try out the sample application [on the Play Store](https://play.google.com/store/apps/details?id=com.astuetz.viewpager.extensions.sample).
 
@@ -12,35 +12,41 @@ Try out the sample application [on the Play Store](https://play.google.com/store
 *For a working implementation of this project see the `sample/` folder.*
 
   1. Include the library as local library project or add the dependency in your build.gradle.
-        
+
         dependencies {
-            compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+            compile 'io.github.shekibobo:pagerslidingtabstrip:1.0.3'
         }
 
   2. Include the PagerSlidingTabStrip widget in your layout. This should usually be placed
      above the `ViewPager` it represents.
 
-        <com.astuetz.PagerSlidingTabStrip
+```xml
+        <io.github.shekibobo.PagerSlidingTabStrip
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="48dip" />
+```
 
   3. In your `onCreate` method (or `onCreateView` for a fragment), bind the
      widget to the `ViewPager`.
 
+```java
          // Initialize the ViewPager and set an adapter
          ViewPager pager = (ViewPager) findViewById(R.id.pager);
          pager.setAdapter(new TestAdapter(getSupportFragmentManager()));
-         
+
          // Bind the tabs to the ViewPager
          PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
          tabs.setViewPager(pager);
+```
 
   4. *(Optional)* If you use an `OnPageChangeListener` with your view pager
      you should set it in the widget rather than on the pager directly.
 
+```java
          // continued from above
          tabs.setOnPageChangeListener(mPageChangeListener);
+```
 
 # Customization
 
@@ -60,17 +66,6 @@ your brand:
  * `pstsTextAllCaps` If true, all tab titles will be upper case, default true
 
 *All attributes have their respective getters and setters to change them at runtime*
-
-# Changelog
-
-### Current Version: 1.0.1
-
-### [1.0.1](https://github.com/astuetz/PagerSlidingTabStrip/tree/v1.0.1)
-
- * Upgraded gradle build files
- * Changed package name to `com.astuetz.PagerSlidingTabStrip`
- * [#37](https://github.com/astuetz/PagerSlidingTabStrip/pull/37), [#41](https://github.com/astuetz/PagerSlidingTabStrip/pull/41) Added `psts` prefix to all attributes in `attrs.xml`
- * [#46](https://github.com/astuetz/PagerSlidingTabStrip/pull/46) Changed the shouldExpand behavior to set the layout at the time the tab is added
 
 # Developed By
 

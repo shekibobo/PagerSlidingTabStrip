@@ -1,4 +1,4 @@
-package com.astuetz.viewpager.extensions.sample;
+package io.github.shekibobo.viewpager.extensions.sample;
 
 import android.graphics.Point;
 import android.os.Build;
@@ -15,8 +15,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.TextView;
 
-import com.astuetz.PagerSlidingTabStrip;
-import com.astuetz.PagerSlidingTabStrip.IconTabProvider;
+import io.github.shekibobo.PagerSlidingTabStrip;
+import io.github.shekibobo.PagerSlidingTabStrip.IconTabProvider;
 
 public class QuickContactFragment extends DialogFragment {
 
